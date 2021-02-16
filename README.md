@@ -1,4 +1,4 @@
-# Wolf and Banger test
+# Wolf and Badger test
 This is a Django CRUD application with for a database PostgreSQL
 
 # Tool used 
