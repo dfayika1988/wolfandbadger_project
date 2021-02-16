@@ -9,7 +9,7 @@ class TestForms(simpleTestCase):
                'fullname' : 'Demilson Fayika',       
                'previous_address' : '19 pelham London SW7 2NQ',
                'telephone_number' : 02086817300,
-               'position' = 'London'
+               'area' = 'London'
 
 
         })
