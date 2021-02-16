@@ -12,7 +12,7 @@ class TestViews(TestCase):
         self.detail_url = reverse('detail', args=['demilsonfayika'])
         self.project1 = Project.objects.create(
             name='DemilsonFayika',
-            area=1000
+            area='London"
         )
 
     def test_customer_list_GET(self):
@@ -27,10 +27,10 @@ class TestViews(TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'customer_register/customer_list.html')
 
-    def test_customer_detail_Post_add_new_expense(self):
+    def test_customer_detail_Post_add_new(self):
         Category.objects.create(
-            project=self.project1,
-            name='development'
+            customer=self.customer1,
+             fullname = 'Demilson Fayika'
 
         )
 
@@ -38,12 +38,12 @@ class TestViews(TestCase):
                'fullname' : 'Demilson Fayika',
                'previous_address' : '19 pelham London SW7 2NQ',
                'telephone_number' : 02086817300,
-               'position' = 'London'
+                'area' = 'London'
 
         })
 
         self.assertEquals(response.status_code, 302)
-        self.assertEquals(self.project1.expenses.first().title, 'Demilson Fayika')
+        self.assertEquals(self.customer1.Customer.first().name, 'Demilson Fayika')
 
     def test_project_detail_Post_no_data(self):
         response = self.client.post(self.detail_url)
@@ -58,23 +58,23 @@ class TestViews(TestCase):
 
         )
         Customer.objects.create(
-            project=self.project1,
+            customer=self.customer1,
            'previous_address' : '19 pelham London SW7 2NQ',
            'telephone_number' : 02086817300
             category=category1
 
         )
-        response = self.client.delete(self.detail_url, json.dumps({
+        response = self.customer.delete(self.detail_url, json.dumps({
             'id': 1
         }))
 
         self.assertEqual(response.status_code, 204)
-        self.assertEqual(self.project1.expenses.count(), 0)
+        self.assertEqual(self.customer.Customr1.count(), 0)
 
     def test_customer_detail_DELETE_no_id(self):
         category1 = Category.create(
             customer=self.customer1,
-            name='development'
+            'fullname : 'Demilson Fayika'
 
         )
         Customer.objects.create(
@@ -88,14 +88,14 @@ class TestViews(TestCase):
         response = self.client.delete(self.detail_url, json.dumps)
 
         self.assertEqual(response.status_code, 404)
-        self.assertEqual(self.project1.expenses.count(), 0)
+        self.assertEqual(self.customer1.Customer.count(), 0)
 
 
     def test_customer_create_POST(self):
         url =reverse('add')
         response =self.client.post(url,{
-             'name': 'Demilson Fayika',
-             'budget': 02086917300
+             'fullname': 'Demilson Fayika',
+              'area' = 'London'
 
         })
 
