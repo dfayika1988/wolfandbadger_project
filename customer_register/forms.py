@@ -5,7 +5,7 @@ class CustomerForm(forms.ModelForm):
 
     class  Meta:
         model = Customer
-        fields = ('fullname','previous_address','telephone_number','position')
+        fields = ('fullname','previous_address','telephone_number','area')
         labels = {
             'fullname':'Full Name'
         
@@ -13,6 +13,6 @@ class CustomerForm(forms.ModelForm):
 
     def __init__(self, *args, **kwargs):
         super(CustomerForm,self).__init__(*args, **kwargs)
-        self.fields['position'].empty_label = "Select"
+        self.fields['area'].empty_label = "Select"
      
         
