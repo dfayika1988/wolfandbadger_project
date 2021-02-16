@@ -24,4 +24,4 @@ I used python migrations to connect django with postgres.
 
 # Test
 
-I conducted intergrated test there I used the djnago-test-client. 
+I conducted intergrated test, as I usedd the djnago-test-client (test folder where I tested the views, forms and url and models). 
