@@ -1,5 +1,5 @@
 # Wolf and Badger test
-This is a Django CRUD application with for a database PostgreSQL
+This is a Django CRUD application with a database PostgreSQL
 
 # Tool used 
 
